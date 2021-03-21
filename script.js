@@ -28,6 +28,8 @@ const player = {
   dy: 0
 };
 
+var keys = ["Right", "ArrowRight", "Left", "ArrowLeft", "Up", "ArrowUp", "Down", "ArrowDown"];
+
 function drawPlayer() {
   context.drawImage(image, player.x, player.y, player.w, player.h);
 }
@@ -87,28 +89,37 @@ function moveLeft() {
 }
 
 function keyDown(e) {
-  if (e.key === 'ArrowRight' || e.key === "Right") {
-    moveRight();
-  } else if (e.key === 'ArrowLeft' || e.key === "Left") {
-    moveLeft();
-  } else if (e.key === "ArrowUp" || e.key === "Up") {
-    moveUp();
-  } else if (e.key === "ArrowDown" || e.key === "Down") {
-    moveDown();
+
+  switch (e.key) {
+    case keys[0]: // Right
+      moveRight();
+      break;
+    case keys[1]: 
+      moveRight();
+      break;
+    case keys[2]: // Left
+      moveLeft();
+      break;
+    case keys[3]:
+      moveLeft();
+      break;
+    case keys[4]: // Up
+      moveUp();
+      break;
+    case keys[5]:
+      moveUp();
+      break;
+    case keys[6]: // Down
+      moveDown();
+      break;
+    case keys[7]:
+      moveDown();
+      break;
   }
 }
 
 function keyUp(e) {
-  if (
-    e.key == "Right" || 
-    e.key == "ArrowRight" || 
-    e.key == "Left" || 
-    e.key == "ArrowLeft" ||
-    e.key == "Up" || 
-    e.key == "ArrowUp" || 
-    e.key == "Down" || 
-    e.key == "ArrowDown"
-  ) {
+  if (keys.includes(e.key)) {
     player.dx = 0;
     player.dy = 0;
   }
@@ -118,6 +129,7 @@ update();
 
 document.addEventListener('keydown', keyDown);
 document.addEventListener('keyup', keyUp);
+
 
 /*
 context.fillStyle = "black";
