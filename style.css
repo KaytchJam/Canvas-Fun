@@ -1,0 +1,33 @@
+body { padding: 10px 0px 0px 10px; }
+
+#header1 {
+  font-size: 36px;
+  color: black;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-block;
+}
+
+.s-block {
+  display: block;
+}
+
+#c-domain {
+  padding-left: 10px;
+}
+
+#c-board {
+  border: solid black 4px;
+  margin-top: -15px;
+  margin-bottom: -15px;
+  position: relative;
+}
+
+.c-caption {
+  display: block;
+  font-style: italic;
+}
+
+#source {
+  display: none;
+}
